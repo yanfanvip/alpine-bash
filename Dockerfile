@@ -8,5 +8,4 @@ RUN apk add --update curl && \
   apk add glibc-bin.apk glibc.apk && \
   /usr/glibc-compat/sbin/ldconfig /lib /usr/glibc-compat/lib && \
   echo 'hosts: files mdns4_minimal [NOTFOUND=return] dns mdns4' >> /etc/nsswitch.conf && \
-  rm -rf glibc.apk glibc-bin.apk /var/cache/apk/*
-RUN apk add bash && rm -rf /var/cache/*/* && echo "" > /root/.ash_history
+  apk del curl && rm -rf glibc.apk glibc-bin.apk /var/cache/apk/*
